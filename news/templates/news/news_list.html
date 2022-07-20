@@ -1,0 +1,13 @@
+{% extends 'default.html' %}
+
+{% load custom_filters %}
+
+{% block content %}
+<p><strong>СПИСОК НОВОСТЕЙ:</strong></p>
+{% for new in news_list %}
+<p>{{ new.title|censor }}<p/>
+<p>{{ new.time_create|date:"d.m.Y H:i" }}<p/>
+<p>{{ new }}<p/>
+<p>&nbsp;</p>
+{% endfor %}
+{% endblock content %}
